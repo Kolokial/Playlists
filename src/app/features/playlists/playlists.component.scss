@@ -1,7 +1,14 @@
+@import "~@angular/material/theming";
+
 .artwork {
-    width: 100%;
+  width: 100%;
 }
 
-mat-list-item {
-    border: 1px solid black;
-}
+// mat-list-item {
+//     border: 1px solid black;
+
+//     &:hover {
+//         background-color: black;
+//         color: white;
+//     }
+// }

@@ -1,9 +1,14 @@
-<mat-list role="list" *ngFor="let playlist of playlistContent">
-    <mat-list-item role="listitem">
-        <mat-icon mat-list-icon>
-            <img class="artwork" [src]="playlist.artwork" />
-        </mat-icon>
-        <div mat-line>{{ playlist.name }}</div>
-        <div mat-line>Curated by {{ playlist.curator_name }}</div>
-    </mat-list-item>
-</mat-list>
+<mat-nav-list>
+  <mat-list-item
+    [routerLink]="['playlist', playlist.id]"
+    routerLinkActive="active"
+    class="mat-elevation-z4"
+    *ngFor="let playlist of playlistContent"
+  >
+    <mat-icon mat-list-icon>
+      <img class="artwork" [src]="playlist.artwork" />
+    </mat-icon>
+    <div mat-line>{{ playlist.name }}</div>
+    <div mat-line>Curated by {{ playlist.curator_name }}</div>
+  </mat-list-item>
+</mat-nav-list>
