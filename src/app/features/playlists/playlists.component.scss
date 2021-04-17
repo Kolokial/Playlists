@@ -4,11 +4,8 @@
   width: 100%;
 }
 
-// mat-list-item {
-//     border: 1px solid black;
-
-//     &:hover {
-//         background-color: black;
-//         color: white;
-//     }
-// }
+.flexbox-parent {
+  margin-top: 120px;
+  justify-content: center;
+  display: flex;
+}

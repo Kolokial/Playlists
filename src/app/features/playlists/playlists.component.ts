@@ -10,6 +10,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class PlaylistsComponent implements OnInit {
   playlistContent: IPlaylistContent[];
+  isError: boolean = false;
 
   constructor(private _playlistService: PlaylistsService) {}
 
@@ -18,6 +19,9 @@ export class PlaylistsComponent implements OnInit {
       next: (response) => {
         console.log(response);
         this.playlistContent = response.featuredPlaylists.content;
+      },
+      error: () => {
+        this.isError = true;
       },
     });
   }

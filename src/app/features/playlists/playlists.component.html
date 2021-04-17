@@ -1,3 +1,7 @@
+<div *ngIf="!playlistContent" class="flexbox-parent">
+  <mat-spinner *ngIf="!playlistContent"></mat-spinner>
+</div>
+
 <mat-nav-list>
   <mat-list-item
     [routerLink]="['playlist', playlist.id]"
@@ -12,3 +16,5 @@
     <div mat-line>Curated by {{ playlist.curator_name }}</div>
   </mat-list-item>
 </mat-nav-list>
+
+<app-error-card *ngIf="!playlistContent && isError"></app-error-card>
