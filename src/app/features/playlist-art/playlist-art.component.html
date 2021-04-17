@@ -1,0 +1,19 @@
+<div *ngIf="!playlistContent" class="flexbox-parent">
+  <mat-spinner *ngIf="!playlistContent"></mat-spinner>
+</div>
+
+<mat-card *ngIf="playlistContent">
+  <mat-card-header>
+    <div mat-card-avatar><mat-icon>music_note</mat-icon></div>
+    <mat-card-title>{{ playlistContent.name }}</mat-card-title>
+    <mat-card-subtitle>Curated by {{ playlistContent.curator_name }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="playlistContent.artwork" [alt]="playlistContent.name" />
+  <mat-card-content>
+    <a [href]="playlistContent.url"><mat-icon>link</mat-icon></a>
+    <p>Follow the link below to visit the {{ playlistContent.name }} {{ playlistContent.kind }}.</p>
+  </mat-card-content>
+  <mat-card-actions> </mat-card-actions>
+</mat-card>
+
+<app-error-card *ngIf="!playlistContent && isError"></app-error-card>
