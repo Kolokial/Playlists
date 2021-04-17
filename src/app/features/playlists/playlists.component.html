@@ -1,0 +1,9 @@
+<mat-list role="list" *ngFor="let playlist of playlistContent">
+    <mat-list-item role="listitem">
+        <mat-icon mat-list-icon>
+            <img class="artwork" [src]="playlist.artwork" />
+        </mat-icon>
+        <div mat-line>{{ playlist.name }}</div>
+        <div mat-line>Curated by {{ playlist.curator_name }}</div>
+    </mat-list-item>
+</mat-list>
