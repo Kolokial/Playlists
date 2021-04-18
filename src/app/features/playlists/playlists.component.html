@@ -12,8 +12,8 @@
     <mat-icon mat-list-icon>
       <img class="artwork" [src]="playlist.artwork" />
     </mat-icon>
-    <div mat-line>{{ playlist.name }}</div>
-    <div mat-line>Curated by {{ playlist.curator_name }}</div>
+    <div class="playlist-name" mat-line>{{ playlist.name }}</div>
+    <div class="playlist-curator" mat-line>Curated by {{ playlist.curator_name }}</div>
   </mat-list-item>
 </mat-nav-list>
 
