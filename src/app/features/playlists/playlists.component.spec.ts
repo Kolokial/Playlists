@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ActivatedRoute } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { of } from 'rxjs';
 import {
   IFeaturedPlaylists,
   IFeaturedPlaylistsResponse,
@@ -24,6 +25,7 @@ describe('PlaylistsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [MatListModule, MatIconModule],
       declarations: [PlaylistsComponent],
       providers: [
         {

@@ -1,16 +1,29 @@
-import { TestBed } from '@angular/core/testing'
-
-import { PlaylistsService } from './playlists.service'
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { PlaylistsService } from './playlists.service';
+import { HttpClient } from '@angular/common/http';
 
 describe('PlaylistsService', () => {
-    let service: PlaylistsService
+  let service: PlaylistsService;
+  let httpClient: HttpTestingController;
 
-    beforeEach(() => {
-        TestBed.configureTestingModule({})
-        service = TestBed.inject(PlaylistsService)
-    })
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [
+        PlaylistsService,
+        {
+          provide: HttpClient,
+          useValue: HttpTestingController,
+        },
+      ],
+    });
 
-    it('should be created', () => {
-        expect(service).toBeTruthy()
-    })
-})
+    service = TestBed.inject(PlaylistsService);
+    httpClient = TestBed.inject(HttpTestingController);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+});
