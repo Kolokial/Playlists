@@ -8,7 +8,9 @@ Managed to get most of the UI to look how I would like, minimalist and subtle. M
 
 ## Challenges/Failures
 
-Unfortunatley, I wasn't able to get a unit test written for the playlist.service, not for a lack of trying. 9 out of 10 tests passed. I think there's an issue with a `HttpClient` dependency which I think is related to the `BaseService` also having that requirement and being passed via `super`. Wouldl like to have investigated that issue a bit more, or come up with an alternative solution. My idea was to create a so-called `BaseService` that would handle most, if not all, http requests via `HttpClient`, and then deal with the mundane error, url, response, etc, handling.
+Unfortunatley, I wasn't able to get a unit test written for the playlist.service, not for a lack of trying. 9 out of 10 tests passed. I think there's an issue with a `HttpClient` dependency which I think is related to the `BaseService` also having that requirement and being passed via `super`. I would like to have investigated that issue a bit more, or come up with an alternative solution. My idea was to create a so-called `BaseService` that would handle most, if not all, http requests via `HttpClient`, and then deal with the mundane error, url, response, etc, handling.
+
+However, if we needed to absolutely get the product out the door, due to time constraints, the simple, but inelegant solution would be to not extend the `BaseService`, either inject an object that handled the `HttpClient` stuff for us, or inject `HttpClient` directly into `PlaylistService` and do the calls from within. Then at a later date, attempt to tidy up.
 
 ## Comments
 
